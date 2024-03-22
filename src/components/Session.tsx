@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { UISpinner } from "./Spinner";
 
 export default function Session({ access_token }: { access_token: string }) {
   const router = useRouter();
@@ -12,5 +13,5 @@ export default function Session({ access_token }: { access_token: string }) {
     router.replace("/");
   }, []);
 
-  return <div>Caricamento in corso...</div>;
+  return <UISpinner />;
 }

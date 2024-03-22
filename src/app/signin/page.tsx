@@ -1,3 +1,4 @@
+import { UIPage } from "../../components/Page";
 import Session from "../../components/Session";
 
 export default async function Page(request: any) {
@@ -15,5 +16,9 @@ export default async function Page(request: any) {
   });
   const data = await response.json();
 
-  return <Session access_token={data.access_token} />;
+  return (
+    <UIPage>
+      <Session access_token={data.access_token} />
+    </UIPage>
+  );
 }
